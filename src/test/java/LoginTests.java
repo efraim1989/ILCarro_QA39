@@ -1,8 +1,14 @@
-import org.openqa.selenium.By;
+import models.User;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class LoginTests extends TestBase{
+public class LoginTests extends TestBase  {
+
+    @BeforeMethod
+    public void precondition(){
+        if (isLogged()) logOut();
+    }
 
     @Test
 
@@ -12,15 +18,27 @@ public class LoginTests extends TestBase{
         fillLoginForm("edpunk@bk.com", "Nikonddddddddd12345!!!!!");
         submitLogin();
         pause(3000);
-        Assert.assertTrue(isElementPresent(By.xpath("//h2[contains(text(),'success')]")));
+        Assert.assertTrue(isLoggedSuccess());
+        onBtnOk();
 
-        onBtnOk(By.xpath("//button[@type='button']"));
-        Assert.assertTrue(isElementPresent(By.xpath("//a[.=' Logout ']")));
+    }
+    @Test
+    public void loginPositiveTestModel() {
 
-        logOut();
-        Assert.assertTrue(isElementPresent(By.xpath("//*[.=' Log in ']")));
+        User user = new User()
+                .withEmail("edpunk@bk.com")
+                .withPassword("Nikonddddddddd12345!!!!!");
 
-        tearDown();
+        openLoginForm();
+
+        fillLoginForm(user);
+
+        pause(5000);
+        submitLogin();
+
+        Assert.assertTrue(isLoggedSuccess());
+        onBtnOk();
+
     }
 
 
