@@ -14,6 +14,8 @@ public class LoginTests extends TestBase  {
 
     public void loginPositiveTest() {
 
+        logger.info("");
+
         openLoginForm();
         fillLoginForm("edpunk@bk.com", "Nikonddddddddd12345!!!!!");
         submitLogin();
@@ -31,7 +33,7 @@ public class LoginTests extends TestBase  {
 
         openLoginForm();
 
-        fillLoginForm(user);
+        fillLoginForm(user.getEmail(), user.getPassword());
 
         pause(5000);
         submitLogin();

@@ -1,3 +1,4 @@
+import models.Car;
 import models.User;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -22,8 +23,22 @@ public class AddNewCarTest extends TestBase{
 
         int i = (int) ((System.currentTimeMillis()/1000)%3600);
 
+        Car car = Car.builder()
+                .location("Tel Aviv")
+                .manufacture("KIA")
+                .model("Sportage")
+                .year("2020")
+                .fuel("Petrol")
+                .seats("5")
+                .carClass("B")
+                .carRegNumber("2363254")
+                .price("156")
+                .about("New Car")
+                .build();
 
-
+        openCarForm();
+        fillCarForm(car);
+        pause(5000);
     }
 
 
