@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
+import java.io.IOException;
+
 public class TestBase implements HelperUser, HelperCar {
 
     WebDriver wd;
@@ -15,7 +17,7 @@ public class TestBase implements HelperUser, HelperCar {
 //        wd.manage().window().maximize();
 //        wd.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 //        }
-        public void setup(){
+        public void setup() throws IOException {
             init();
 
         }

@@ -22,7 +22,17 @@ public class LoginTests extends TestBase  {
         pause(3000);
         Assert.assertTrue(isLoggedSuccess());
         onBtnOk();
+    }
+    public void loginPositiveTestProps() {
 
+        logger.info("");
+
+        openLoginForm();
+        fillLoginForm(getEmail(), getPassword());
+        submitLogin();
+        pause(3000);
+        Assert.assertTrue(isLoggedSuccess());
+        onBtnOk();
     }
     @Test
     public void loginPositiveTestModel() {
