@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="LoginTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-11-07T20:24:17" hostname="KAIKOV-PC" time="12.206">
+  <properties/>
+  <testcase name="loginPositiveTest" classname="LoginTests" time="4.702"/>
+  <testcase name="loginPositiveTestModel" classname="LoginTests" time="7.149"/>
+  <system-out><![CDATA[22:24:17.822 [Test worker] INFO  manager.ApplicationManager -%PARSER_ERROR[kvp]- 
+]]></system-out>
+  <system-err><![CDATA[console.warn: LoginRecipes: "Falling back to a synchronous message for: https://ilcarro.web.app."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://ilcarro.web.app."
+]]></system-err>
+</testsuite>
